@@ -1,4 +1,4 @@
 git add * 
 git status
-git commit -m "oramento obra"
+git commit -m "orçamento obra"
 git push origin master
