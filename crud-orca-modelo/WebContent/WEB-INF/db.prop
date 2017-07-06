@@ -1,0 +1,15 @@
+system.name=CRUD
+system.debug=false
+db.driver =com.mysql.jdbc.Driver
+db.connectString = jdbc:mysql://127.0.0.1/crud?useUnicode=true&characterEncoding=UTF-8
+db.username=root
+db.password=
+db.pool=true
+db.table.prefix=t_
+db.sys.prefix=
+abnormal.fast=true
+text.shortLen=60
+page.size=10
+login.check=true
+upload.path=/upload
+privilege.auto=[news]insert,[news]update
