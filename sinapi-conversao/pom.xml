@@ -3,11 +3,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.jbuncle</groupId>
-    <artifactId>excel-to-mysql</artifactId>
+    <artifactId>sinapi-conversao</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>excel-to-mysql</name>
+    <name>sinapi-conversao</name>
     <url>http://maven.apache.org</url>
 
     <properties>
@@ -37,5 +37,28 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.26</version>
         </dependency>
+        
+         
+        <dependency>
+            <groupId>au.com.bytecode</groupId>
+            <artifactId>opencsv</artifactId>
+            <version>2.4</version>
+        </dependency>
+        <!--
+         
+        <dependency>
+            <groupId>org.apache.clerezza.ext</groupId>
+            <artifactId>org.json.simple</artifactId>
+            <version>0.4</version>
+        </dependency>
+
+         
+        <dependency>
+            <groupId>org.jdom</groupId>
+            <artifactId>jdom2</artifactId>
+            <version>2.0.6</version>
+        </dependency> 
+        
+        -->
     </dependencies>
 </project>
