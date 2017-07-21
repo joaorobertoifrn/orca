@@ -29,15 +29,26 @@ CREATE TABLE IF NOT EXISTS `sinapi`.`insumos` (
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
+-- -----------------------------------------------------
+-- Table `sinapi`.`Classe`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `sinapi`.`classe` (
+  `id` INT NOT NULL,
+  `descricao` VARCHAR(45) NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+
 
 -- -----------------------------------------------------
 -- Table `sinapi`.`Composicoes`
 -- -----------------------------------------------------
+DROP TABLE composicoes;
 CREATE TABLE IF NOT EXISTS `sinapi`.`composicoes` (
-  `classe` VARCHAR(100) NULL,
+  `id_classe` INT,
+  `classe` VARCHAR(100) NULL,   -- temporario
   `agrupador` INT,
   `descricao_agrupador` VARCHAR(100),
-  `codigo_composicao` VARCHAR(10) NOT NULL,
+  `codigo_composicao` VARCHAR(15) NOT NULL,
   `descricao_composicao` VARCHAR(100),
   `unidade` VARCHAR(10),
   `custo_mao_obra` FLOAT,
@@ -53,15 +64,17 @@ CREATE TABLE IF NOT EXISTS `sinapi`.`composicoes` (
   PRIMARY KEY (`codigo_composicao`))
 ENGINE = InnoDB;
 
+SELECT count(*) FROM composicoes;
+
 
 -- -----------------------------------------------------
 -- Table `sinapi`.`Compo_Itens`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `sinapi`.`compo_itens` (
+CREATE TABLE IF NOT EXISTS `sinapi`.`composicao_itens` (
   `id` INT NOT NULL,
   `FK_codigo_composicao` INT NOT NULL,
   `tipo_item` VARCHAR(1) NULL,
-  `codigo_item` INT NULL,
+  `codigo_item` VARCHAR(15) NULL,
   `descricao` VARCHAR(100) NULL,
   `coeficiente` FLOAT NULL,
   `unidade` VARCHAR(20) NULL,
@@ -89,15 +102,6 @@ CREATE TABLE IF NOT EXISTS `sinapi`.`insumo_precos` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-
--- -----------------------------------------------------
--- Table `sinapi`.`Classe`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `sinapi`.`classe` (
-  `id` INT NOT NULL,
-  `descricao` VARCHAR(45) NULL,
-  PRIMARY KEY (`id`))
-ENGINE = InnoDB;
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
